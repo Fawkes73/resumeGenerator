@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  </style>
+  <title>Document</title>
+</head>
+<body>
+</script>
+
+<style>
+  /* form styling */
+  form {
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 5px #ccc;
+  }
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  form input[type="text"], form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 16px;
+  }
+  form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  /* resume styling */
+  #resume {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+  }
+  #resume h1 {
+    margin: 0;
+    text-align: center;
+  }
+  #resume h2 {
+    margin: 20px 0 10px 0;
+  }
+  #resume h3 {
+    margin: 10px 0;
+  }
+</style>
+  <script>
+
+    // get values
+
+    
+    
+    // display  values 
+      function generateResume(event) {
+      event.preventDefault(); // prevent the form from being submitted
+    
+      // generate the resume using the form data
+      var name = event.target.elements['name'].value;
+      var contactInfo = event.target.elements['contactInfo'].value;
+      var profSummary = event.target.elements['profSummary'].value;
+      var companyName = event.target.elements['companyName'].value;
+      var positionTitle = event.target.elements['positionTitle'].value;
+      var dofEmployment = event.target.elements['dofEmployment'].value;
+      var resAcco = event.target.elements['resAcco'].value;
+      var degree = event.target.elements['degree'].value;
+      var institution = event.target.elements['institution'].value;
+      var dofgraduation = event.target.elements['dofgraduation'].value;
+      var skills = event.target.elements['skills'].value;
+      var references = event.target.elements['references'].value;
+      // ...
+    
+      var resume = '<h1>Resume</h1>';
+        resume += '<h2>Name:</h2>';
+        resume += '<p>' + name + '</p>';
+        resume += '<h2>Contact Information:</h2>';
+        resume += '<p>' + contactInfo + '</p>';
+        resume += '<h2>Professional Summary:</h2>';
+        resume += '<p>' + profSummary + '</p>';
+        resume += '<h2>Experience</h2>';
+        resume += '<h3>Company Name:</h3>';
+        resume += '<p>' + companyName + '</p>';
+        resume += '<h3>Position Title:</h3>';
+        resume += '<p>' + positionTitle + '</p>';
+        resume += '<h3>Dates of Employment:</h3>';
+        resume += '<p>' + dofEmployment + '</p>';
+        resume += '<h3>Responsibilities and Accomplishments:</h3>';
+        resume += '<p>' + resAcco + '</p>';
+        resume += '<h2>Education</h2>';
+        resume += '<h3>Degree:</h3>';
+        resume += '<p>' + degree + '</p>';
+        resume += '<h3>Institution:</h3>';
+        resume += '<p>' + institution + '</p>';
+        resume += '<h3>Date of Graduation:</h3>';
+        resume += '<p>' + dofgraduation + '</p>';
+        resume += '<h2>Skills:</h2>';
+        resume += '<p>' + skills + '</p>';
+        resume += '<h2>References:</h2>';
+        resume += '<p>' + references + '</p>';
+
+
+      // display the generated resume
+      document.getElementById('resume').innerHTML = resume;
+    }
+    
+    </script>
+
+   
+<form id="resume-form" method="post">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <br>
+  <label for="contact-information">Contact Information:</label><br>
+  <textarea id="contactInfo" name="contact-information" rows="5" cols="50"></textarea><br>
+  <br>
+  <label for="professional-summary">Professional Summary:</label><br>
+  <textarea id="profSummary" name="professional-summary" rows="5" cols="50"></textarea><br>
+  <br>
+  <h2>Experience</h2>
+  <label for="company-name">Company Name:</label><br>
+  <input type="text" id="companyName" name="company-name"><br>
+  <br>
+  <label for="positionTitle">Position Title:</label><br>
+  <input type="text" id="positionTitle" name="position-title"><br>
+  <br>
+  <label for="dofEmployment">Dates of Employment:</label><br>
+  <input type="text" id="dofEmployment" name="dates-of-employment"><br>
+  <br>
+  <label for="resAcco">Responsibilities and Accomplishments:</label><br>
+  <textarea id="resAcco" name="responsibilities-and-accomplishments" rows="5" cols="50"></textarea><br>
+  <br>
+  <h2>Education</h2>
+  <label for="degree">Degree:</label><br>
+  <input type="text" id="degree" name="degree"><br>
+  <br>
+  <label for="institution">Institution:</label><br>
+  <input type="text" id="institution" name="institution"><br>
+  <br><label for="dofgraduation">Date of Graduation:</label><br>
+  <input type="text" id="dofgraduation" name="date-of-graduation"><br>
+  <br>
+  <h2>Skills</h2>
+  <label for="skills">Skills:</label><br>
+  <textarea id="skills" name="skills" rows="5" cols="50"></textarea><br>
+  <br>
+  <h2>References</h2>
+  <label for="references">References:</label><br>
+  <textarea id="references" name="references" rows="5" cols="50"></textarea><br>
+  <br>
+  <!-- additional form fields -->
+  
+  <!-- form fields -->
+  <input type="submit" value="Generate Resume">
+</form>
+
+<div id="resume"></div>
+
+<script>
+  document.getElementById('resume-form').addEventListener('submit', generateResume);
+</script>
+
+    
+    
+    
+</body>
+</html>
